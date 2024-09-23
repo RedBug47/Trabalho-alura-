@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Filmes</title>
+    <style>
+        /* Estilos do corpo da página */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container central para o recomendador */
+        #container {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Estilos do título */
+        h1 {
+            font-size: 36px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-transform: uppercase;
+        }
+
+        /* Estilos da recomendação de filme */
+        #recomendacao {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ffcc00;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 24px;
+            font-style: italic;
+            width: 80%;
+            max-width: 500px;
+            color: #ffcc00;
+        }
+
+        /* Estilos do botão */
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 25px;
+            color: #2b5876;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff9900;
+        }
+
+        button:active {
+            background-color: #cc7a00;
+        }
+
+        /* Texto do rodapé */
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Recomendador de Filmes</h1>
+        <div id="recomendacao">Clique no botão para receber uma recomendação de filme!</div>
+        <button onclick="recomendarFilme()">Recomendar Filme</button>
+    </div>
+
+    <!-- Rodapé com o texto do trabalho -->
+    <footer>
+        Trabalho Alura 2°F
+    </footer>
+
+    <script>
+        const filmes = [
+            "O Poderoso Chefão",
+            "Pulp Fiction",
+            "Clube da Luta",
+            "Matrix",
+            "Forrest Gump",
+            "A Origem",
+            "Os Vingadores",
+            "Interestelar",
+            "Parasita",
+            "Coringa"
+        ];
+
+        function recomendarFilme() {
+            const indiceAleatorio = Math.floor(Math.random() * filmes.length);
+            const filmeRecomendado = filmes[indiceAleatorio];
+            document.getElementById('recomendacao').textContent = `Recomendação: ${filmeRecomendado}`;
+        }
+    </script>
+</body>
+</html>
